@@ -47,7 +47,8 @@ public class ControlParqueadero //Principal en el diseño propuesto
         {
              JOptionPane.showMessageDialog(null,"Los datos del carro son:  \n" +
                                     "Placa: "+ carro.getPlaca() + "\n"+
-                                    "Propietario: "+ carro.getPropietario());
+                                    "Propietario: "+ carro.getPropietario() + "\n"+
+                                    "Cilindraje: " + carro.getCilindraje());
         }
     }
 
