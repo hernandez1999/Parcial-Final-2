@@ -34,12 +34,7 @@ public class Parqueadero
   }
   return false;
  }
- 
- /**
-  * Método para buscar un carro en el parqueadero, dada la placa.
-  * @param placa la placa del carro que se desea buscar
-  * @return  el carro (si se encuentra) o null si no se encuentra
-  */
+
  public Carro buscarCarro(String placa)
  {
   for (int i = 0; i < carros.length; i++) 
@@ -55,5 +50,13 @@ public class Parqueadero
   return null;
  }
 
+ public Carro mostrarCupos(String placa)
+ {
+  for (int i = 0; i < carros.length; i++) 
+  {
+     return carros[i];
+  }
+     return null;
+ }
 } 
 
