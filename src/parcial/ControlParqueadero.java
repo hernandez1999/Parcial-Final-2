@@ -63,8 +63,11 @@ public class ControlParqueadero
             JOptionPane.showMessageDialog(null,"No se encuentra parqueado un carro con esa placa");
         }
     }
+    
+ public static void mostraCupos(){
 
-
+}
+    
     public void menu() {
         
         int opcion=-1;
