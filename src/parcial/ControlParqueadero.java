@@ -3,7 +3,7 @@ package parcial;
 
 import javax.swing.*;
 
-public class ControlParqueadero 
+public class ControlParqueadero //Principal en el diseño propuesto
 {
     
     Parqueadero parquea = new Parqueadero();
@@ -15,9 +15,9 @@ public class ControlParqueadero
             
             if (parquea.buscarCarro(placa) == null) 
             {
-                String propietario = JOptionPane.showInputDialog("Placa del carro:");
-                String propietarioCadena = JOptionPane.showInputDialog("Propietario del carro:");
-                float cilindraje = Integer.parseInt(propietarioCadena);
+                String propietario = JOptionPane.showInputDialog("Propietario del carro:");
+                String cilindrajeCadena = JOptionPane.showInputDialog("Cilindraje del carro:");
+                float cilindraje = Integer.parseInt(cilindrajeCadena);
                 Carro nuevo = new Carro(placa, propietario, cilindraje);
                 boolean pudoParquear = parquea.parquearCarro(nuevo);
                 if (pudoParquear) 
@@ -53,10 +53,13 @@ public class ControlParqueadero
 
     public void retirarCarro() {
         String placa = JOptionPane.showInputDialog("Placa del carro:");
+        String tiempotCadena = JOptionPane.showInputDialog("Tiempo del carro en el parqueadero:");
+        float tiempot = Integer.parseInt(tiempotCadena);               
+        float valor = tiempot*100;
         boolean pudoSacar = parquea.retirarCarro(placa);
         if (pudoSacar) 
         {
-            JOptionPane.showMessageDialog(null,"El carro se retiró del parqueadero exitosamente");
+            JOptionPane.showMessageDialog(null,"El carro se retiró del parqueadero exitosamente y el valor a pagar es: " +valor);
         }
         else 
         {
@@ -64,7 +67,7 @@ public class ControlParqueadero
         }
     }
     
- public static void mostraCupos(){
+ public static void mostrarCupos(){
 
 }
     
@@ -73,10 +76,11 @@ public class ControlParqueadero
         int opcion=-1;
         do {
             String valorSeleccionado = 
-            JOptionPane.showInputDialog(" ---- MENU PARQUEADERO ---  \n" +
+            JOptionPane.showInputDialog(" ---- MENU  ---  \n" +
                         "1.Ingresar un carro    \n" +
                         "2.Mostrar un carro  \n" +
                         "3.Retirar un carro   \n" +
+                        "4.Mostrar carros del parqueadero   \n" +
                         "0.Salir     \n\n" +
                         "Opción seleccionada: ");
             try 
@@ -93,6 +97,10 @@ public class ControlParqueadero
                     
                     // Opcion 3: Sacar un carro del parqueadero
                     case 3: retirarCarro();
+                            break;
+                            
+                    //Opcion 4: Mostrar los carros del parqueadero        
+                    case 4: mostrarCupos();
                             break;
     
                     case 0: break;
